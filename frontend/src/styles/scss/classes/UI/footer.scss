@@ -1,0 +1,57 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.home-footer {
+  @include flexColumn();
+  margin: $default-value 0;
+
+  .footer__icons {
+    width: 80%;
+    display: flex;
+    padding: 0 0 $default-value $default-value;
+    gap: $default-value;
+
+    svg {
+      width: $footer__icons-size;
+      height: $footer__icons-size;
+    }
+  }
+
+  .footer__lists--wrapper {
+    width: 80%;
+
+    .footer__lists {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: $default-value;
+      margin: 0;
+      padding: 0 $default-value;
+
+      li {
+        list-style: none;
+
+        a {
+          color: inherit;
+          font-size: $default-value * 0.9;
+        }
+      }
+    }
+  }
+
+  p {
+    @include flexRow();
+    justify-content: start;
+    color: map.get($color, "stone");
+  }
+}
+
+@include media-min-width(40rem) {
+  .home-footer {
+    .footer__lists--wrapper {
+      .footer__lists {
+        grid-template-columns: repeat(3, auto);
+      }
+    }
+  }
+}

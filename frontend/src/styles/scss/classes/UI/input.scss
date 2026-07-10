@@ -1,0 +1,61 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.form-control,
+.form-control--err {
+  @include flexColumn();
+  width: 100%;
+  align-items: start;
+  margin: $default-value 0;
+  position: relative;
+
+  .form-control__input,
+  .form-control__input--err {
+    width: 100%;
+    padding: $default-value;
+    background: map.get($color, dark);
+    color: map.get($color, light);
+    border: 1px solid map.get($color, light);
+    border-radius: 5px;
+
+    &::placeholder {
+      color: map.get($color, stone);
+    }
+
+    &:focus {
+      outline: double 3px map.get($color, white);
+    }
+  }
+
+  .form-control__input--err {
+    border: 1px solid map.get($color, red--light);
+
+    &:focus {
+      outline: double 3px map.get($color, red--light);
+    }
+  }
+
+  .form-control__btn {
+    background: none;
+    border: none;
+    color: map.get($color, light);
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-40%);
+
+    &:hover {
+      color: map.get($color, stone);
+    }
+  }
+}
+
+.form-control--err {
+  margin-bottom: 0;
+}
+
+.err {
+  margin: 0;
+  color: map.get($color, red--light);
+  font-size: $default-value * 0.8;
+}

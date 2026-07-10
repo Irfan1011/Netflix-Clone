@@ -1,0 +1,135 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.modal {
+  @include flexColumn();
+  background: transparent;
+  border: none;
+  color: map.get($color, "white");
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  .modal__info {
+    @include flexRow();
+    justify-content: space-between;
+    width: 100%;
+
+    .modal__desc {
+      @include flexRow();
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .modal__vote {
+      @include flexRow();
+    }
+
+    &--col {
+      @include flexColumn();
+      padding: 0 $default-value;
+      height: 100%;
+      gap: $default-value;
+
+      .info__cat {
+        @include flexRow();
+        justify-content: start;
+        gap: $default-value;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        li {
+          background: map.get($color, "shadow");
+          color: map.get($color, "light");
+          padding: $default-value * 0.1 $default-value * 0.5;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  &.modal--front-page {
+    width: 45%;
+    height: 85%;
+    justify-content: start;
+    background: map.get($color, "black");
+    border-radius: 5px;
+
+    .modal__banner {
+      width: 100%;
+      height: 55%;
+      position: relative;
+
+      img {
+        width: inherit;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      h2 {
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        left: 3%;
+        z-index: 1;
+      }
+
+      .btn--round {
+        background: transparent;
+        position: absolute;
+        top: 5%;
+        right: 3%;
+        z-index: 1;
+
+        &:hover {
+          background: map.get($color, "stone");
+        }
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        background: linear-gradient(
+          to top,
+          map.get($color, "black"),
+          transparent,
+          transparent
+        );
+      }
+
+      &::after {
+        background: linear-gradient(
+          40deg,
+          map.get($color, "black") 20%,
+          transparent,
+          transparent
+        );
+      }
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  &::backdrop {
+    background: map.get($color, "transparent-black");
+  }
+
+  &[open] {
+    @include pop-up();
+  }
+}

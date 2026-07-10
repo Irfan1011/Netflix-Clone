@@ -1,0 +1,66 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.items-wrapper {
+  position: relative;
+  width: 100%;
+
+  .items__category {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    margin: 0;
+  }
+
+  .items {
+    @include flexRow();
+    justify-content: start;
+    gap: $default-value * 0.5;
+    padding: 0 $default-value * 5;
+    margin: 0;
+    width: 100%;
+    height: $default-value * 16;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .item {
+      list-style: none;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.5);
+        transition: transform 0.5s ease;
+        z-index: 1;
+        background: map.get($color, "dark");
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+@include media-min-width(48rem) {
+  .items-wrapper {
+    .items__category {
+      left: 10%;
+    }
+  }
+}
+
+@include media-min-width(40rem) {
+  .items-wrapper {
+    .items__category {
+      left: 18%;
+    }
+  }
+}
+
+@include media-min-width(24rem) {
+  .items-wrapper {
+    .items__category {
+      left: 24%;
+    }
+  }
+}

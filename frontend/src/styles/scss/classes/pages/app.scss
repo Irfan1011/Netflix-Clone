@@ -1,0 +1,205 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.landing {
+  @include flexColumn();
+  color: map.get($color, "white");
+  background: black;
+  gap: $default-value * 3;
+  overflow: hidden;
+
+  .landing__movies,
+  .landing__reason,
+  .landing__qna,
+  .landing__footer {
+    @include flexColumn();
+    width: 100vw;
+    padding: 0 $default-value * 8;
+    gap: $default-value;
+    position: relative;
+
+    h2 {
+      width: 100%;
+      margin: 0;
+      z-index: 1;
+    }
+  }
+
+  .landing__hero {
+    background: url("../../../../assets/netflix_auth_bg.jpg") center/cover
+      no-repeat border-box;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background: rgba($color: #000000, $alpha: 0.75);
+    }
+
+    .hero__nav {
+      @include flexRow();
+      justify-content: space-between;
+      padding: $default-value $default-value * 10;
+
+      .nav__left {
+        img {
+          width: $default-value * 10;
+        }
+      }
+
+      .nav__right {
+        @include flexRow();
+        gap: $default-value;
+      }
+    }
+
+    .hero__main {
+      @include flexColumn();
+      height: 80%;
+      text-align: center;
+
+      .main__header,
+      .main__input {
+        max-width: 40%;
+      }
+
+      .main__header {
+        h1 {
+          font-size: $default-value * 3;
+        }
+
+        h2 {
+          font-size: $default-value * 1.2;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .hero__nav,
+    .hero__main {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .reason__wrapper {
+    @include flexRow();
+    gap: $default-value;
+    flex-wrap: wrap;
+  }
+
+  .landing__qna {
+    gap: $default-value * 0.5;
+  }
+
+  .landing__footer {
+    .footer__input {
+      width: 65%;
+    }
+
+    .footer {
+      display: grid;
+      align-items: start;
+      gap: $default-value * 2.5;
+      width: 100%;
+      font-size: $default-value * 0.9;
+      color: map.get($color, stone);
+      padding-bottom: $default-value * 9;
+
+      .footer__lists {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax($default-value * 5, 1fr));
+        gap: $default-value;
+        margin: 0;
+        padding: 0;
+      }
+
+      .footer__list,
+      .footer__contact > .contact,
+      .footer__cr > .cr {
+        list-style: none;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .footer__brand--text {
+        color: map.get($color, "light");
+      }
+
+      .footer__cr {
+        font-size: $default-value * 0.8;
+
+        .cr {
+          color: map.get($color, link);
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include media-min-width(62rem) {
+  .landing {
+    .landing__movies,
+    .landing__reason,
+    .landing__qna,
+    .landing__footer {
+      padding: 0 $default-value * 2;
+    }
+
+    .landing__hero {
+      .hero__main {
+        padding: 0 $default-value * 2;
+
+        .main__header,
+        .main__input {
+          max-width: 100%;
+        }
+
+        .main__header {
+          h1 {
+            font-size: $default-value * 1.8;
+          }
+
+          h2 {
+            font-size: $default-value;
+          }
+        }
+      }
+
+      .hero__nav {
+        padding: $default-value * 2 $default-value * 1.5;
+        justify-content: space-around;
+
+        .nav__left {
+          img {
+            max-width: $default-value * 5;
+          }
+        }
+      }
+    }
+
+    .landing__footer {
+      padding: 0 $default-value * 2;
+
+      .footer {
+        .footer__lists {
+          grid-template-columns: auto;
+        }
+      }
+
+      .footer__input {
+        width: 100%;
+      }
+    }
+  }
+}

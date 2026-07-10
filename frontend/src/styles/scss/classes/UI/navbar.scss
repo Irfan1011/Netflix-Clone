@@ -1,0 +1,175 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.nav,
+.nav-mobile {
+  @include flexRow();
+  justify-content: space-around;
+  padding: $default-value;
+  position: fixed;
+  z-index: 2;
+
+  .nav__left,
+  .nav-mobile__left {
+    width: 10%;
+
+    & button {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .nav__menu,
+  .nav-mobile__menu {
+    ul {
+      padding: 0;
+      @include flexRow();
+      gap: $default-value;
+
+      li {
+        list-style: none;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .nav__right {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: $default-value;
+
+    .profile {
+      display: flex;
+      cursor: pointer;
+      position: relative;
+
+      img {
+        width: $default-value * 2;
+        height: $default-value * 2;
+        border-radius: 10px;
+      }
+
+      &::after {
+        content: "";
+        background: transparent;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid map.get($color, light);
+        transform: translateY(50%);
+        position: absolute;
+        bottom: 50%;
+        right: -50%;
+      }
+
+      &:hover .btn--dropdown,
+      &:active .btn--dropdown {
+        display: block;
+      }
+    }
+  }
+
+  &.nav--dark {
+    background: map.get($color, "dark");
+  }
+}
+
+.nav-mobile {
+  display: none;
+}
+
+@include media-min-width(48rem) {
+  .nav {
+    display: none;
+  }
+
+  .backdrop {
+    width: 100vw;
+    height: 100vh;
+    background: map.get($color, "transparent-black");
+    position: fixed;
+    z-index: 1;
+  }
+
+  .nav-mobile {
+    display: flex;
+    justify-content: space-between;
+    padding-left: $default-value * 3;
+
+    .nav-mobile__left {
+      width: 30%;
+
+      button {
+        display: block;
+      }
+    }
+
+    .nav-mobile__right {
+      button {
+        border: none;
+        background: transparent;
+        color: map.get($color, "light");
+
+        svg {
+          width: $default-value * 2;
+          height: $default-value * 2;
+        }
+      }
+    }
+
+    &.open {
+      flex-direction: column;
+      justify-content: start;
+      width: 80vw;
+      height: 100vh;
+      background: map.get($color, "black");
+      padding: $default-value;
+
+      .nav-mobile__left {
+        @include flexColumn();
+        width: 100%;
+        gap: $default-value;
+
+        img {
+          width: 60%;
+        }
+
+        button {
+          display: block;
+          align-self: end;
+          background: transparent;
+          color: white;
+          border: none;
+          font-size: $default-value * 2;
+          outline: solid 2px;
+          border-radius: 10%;
+        }
+      }
+
+      .nav-mobile__menu {
+        width: 100%;
+
+        ul {
+          flex-direction: column;
+          align-items: start;
+          padding: $default-value $default-value * 3;
+        }
+      }
+    }
+  }
+}
+
+@include media-min-width(40rem) {
+  .nav-mobile {
+    .nav-mobile__left {
+      width: 45%;
+    }
+  }
+}

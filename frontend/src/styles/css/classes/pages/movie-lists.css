@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.movies {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+  gap: 3.3rem;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  overflow-x: scroll;
+}
+.movies::-webkit-scrollbar {
+  display: none;
+}
+.movies .movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+.movies .movie .movie__card {
+  width: 12rem;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.movies .movie .movie__card p {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: -12%;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #16161a;
+  -webkit-text-stroke: 1px #ffffff;
+}
+.movies .movie .movie__card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.movies .movie .movie__card:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.movies.move--right .movie {
+  transform: translateX(-73rem);
+}
+.movies.move--left .movie {
+  transform: translateX(0);
+}
+.movies.move--right .movie, .movies.move--left .movie {
+  transition: 0.5s ease;
+}
+
+@media (max-width: 40rem) {
+  .movies {
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  .movies .movie > .movie__card {
+    width: 10rem;
+  }
+}
+
+/*# sourceMappingURL=movie-lists.css.map */

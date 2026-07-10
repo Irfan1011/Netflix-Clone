@@ -1,0 +1,13 @@
+@use "../abstracts/index" as *;
+@use "sass:map";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  background: map.get($color, "black");
+  color: map.get($color, "light");
+}

@@ -1,0 +1,121 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.default-btn {
+  @include flexRow();
+  padding: $default-value * 0.5 $default-value * 1.5;
+  width: max-content;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background: map.get($color, stone);
+    color: map.get($color, light);
+  }
+}
+
+.main-btn {
+  background: map.get($color, red--light);
+  width: 100%;
+  border: none;
+  color: map.get($color, light);
+
+  &:hover {
+    background: map.get($color, red--dark);
+  }
+}
+
+.btn--auth {
+  font-size: $default-value;
+  padding: $default-value * 0.7;
+  margin: $default-value * 0.5 0;
+}
+
+.btn--link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-weight: lighter;
+  text-decoration: underline;
+  color: map.get($color, "link");
+
+  &:hover {
+    background: none;
+    border: none;
+  }
+}
+
+.btn--round {
+  @include flexRow();
+  border-radius: 100%;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  background: map.get($color, "transparent-black");
+  color: map.get($color, "white");
+  font-size: $default-value * 2;
+  cursor: pointer;
+
+  &:hover {
+    background: map.get($color, "stone");
+  }
+}
+
+.btn--dropdown {
+  display: none;
+  width: max-content;
+  margin: 0;
+  padding: $default-value;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: inherit;
+  background: map.get($color, "dark");
+  position: absolute;
+  top: 100%;
+  right: -100%;
+}
+
+.btn__page-left,
+.btn__page-right {
+  @include flexRow();
+  border-radius: 8px;
+  height: $default-value * 7;
+  background: map.get($color, "black");
+  color: map.get($color, "white");
+  border: none;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+
+  &:hover {
+    background: map.get($color, "dark");
+    cursor: pointer;
+  }
+}
+
+.btn__page-left {
+  left: 8.5%;
+}
+
+.btn__page-right {
+  right: 8.5%;
+}
+
+.btn--show {
+  display: block;
+}
+
+.btn--hide {
+  display: none;
+}
+
+@include media-min-width(62rem) {
+  .btn__page-left,
+  .btn__page-right {
+    display: none;
+  }
+}

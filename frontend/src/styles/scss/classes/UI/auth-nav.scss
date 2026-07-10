@@ -1,0 +1,33 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.navbar {
+  height: $default-value * 2.5;
+  margin: $default-value $default-value * 10;
+  position: absolute;
+
+  .brand {
+    height: 100%;
+  }
+}
+
+.auth {
+  width: 100vw;
+  height: 100vh;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 100%, transparent), $auth-bg;
+  background-size: cover;
+}
+
+@include media-min-width(40rem) {
+  .navbar {
+    margin: $default-value * 0.5;
+    height: $default-value * 2;
+  }
+}
+
+@include media-min-width(24rem) {
+  .navbar {
+    height: $default-value * 1.5;
+  }
+}

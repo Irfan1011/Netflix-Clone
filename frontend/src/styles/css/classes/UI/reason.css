@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.reason {
+  width: 100%;
+  max-width: 18rem;
+  flex-grow: 1;
+  height: 20rem;
+  background: linear-gradient(330deg, #210e17 20%, #1d1930, #192146);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+}
+.reason p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 62rem) {
+  .reason {
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=reason.css.map */

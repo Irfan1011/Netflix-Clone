@@ -1,0 +1,27 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.reason {
+  width: 100%;
+  max-width: $default-value * 18;
+  flex-grow: 1;
+  height: $default-value * 20;
+  background: linear-gradient(
+    330deg,
+    map.get($color, "dark-black") 20%,
+    map.get($color, "dark-violet"),
+    map.get($color, "violet")
+  );
+  border-radius: 10px;
+  padding: $default-value * 2 $default-value;
+
+  p {
+    color: map.get($color, "light");
+  }
+}
+
+@include media-min-width(62rem) {
+  .reason {
+    max-width: 100%;
+  }
+}

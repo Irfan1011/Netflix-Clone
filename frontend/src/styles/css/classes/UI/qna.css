@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.qna {
+  width: 100%;
+}
+.qna button, .qna > p {
+  width: 100%;
+  padding: 0.2rem 2rem;
+  border: none;
+  justify-content: space-between;
+  font-weight: normal;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: #2f2f2f;
+}
+.qna button:hover, .qna > p:hover {
+  background: #696969;
+}
+.qna button .rotate-icon, .qna > p .rotate-icon {
+  animation: rotate45deg 0.2s forwards;
+}
+.qna > p {
+  animation: slide-down 0.2s forwards;
+  transform-origin: 50% 0;
+  margin: 0.1rem 0;
+  padding: 2rem;
+}
+.qna > p:hover {
+  background: #2f2f2f;
+}
+
+/*# sourceMappingURL=qna.css.map */
