@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.language-dropdown {
+  display: flex;
+  align-items: center;
+  border: solid 1px rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  width: fit-content;
+  position: relative;
+}
+.language-dropdown select {
+  background: none;
+  padding: 0.4rem 2rem;
+  font-weight: 530;
+  color: #ffffff;
+  border: none;
+  appearance: none;
+}
+.language-dropdown select option,
+.language-dropdown select option:hover {
+  color: #16161a;
+}
+.language-dropdown select:focus-visible {
+  outline: 4px double #ffffff;
+  border-radius: 5px;
+}
+.language-dropdown .language-icon,
+.language-dropdown .arrow-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.language-dropdown .language-icon {
+  left: 5%;
+}
+.language-dropdown .arrow-icon {
+  right: 5%;
+}
+
+@media (max-width: 40rem) {
+  .language-dropdown {
+    width: 30%;
+  }
+  .language-dropdown select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/*# sourceMappingURL=selectLanguage.css.map */

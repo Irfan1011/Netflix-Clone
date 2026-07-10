@@ -1,0 +1,83 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.auth {
+  @include flexColumn();
+
+  .auth-card {
+    @include flexColumn();
+    max-width: 80%;
+    align-items: start;
+    background: map.get($color, "transparent-black");
+    padding: $default-value * 4;
+    border-radius: 3px;
+    z-index: 1;
+
+    .title {
+      margin: 0;
+    }
+
+    .auth-card__remember {
+      @include grid(1, 2, auto, auto);
+      column-gap: $default-value;
+      margin: $default-value 0;
+
+      .remember__left {
+        @include flexRow();
+        gap: $default-value * 0.5;
+        grid-column: 1/2;
+        text-align: start;
+      }
+
+      .remember__right {
+        grid-column: 2/3;
+        text-align: end;
+
+        a {
+          color: map.get($color, link);
+
+          &:hover {
+            color: map.get($color, light);
+          }
+        }
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.7);
+        accent-color: map.get($color, "white");
+      }
+    }
+
+    .auth-link {
+      @include flexRow();
+      gap: $default-value * 0.3;
+    }
+  }
+}
+
+@include media-min-width(40rem) {
+  .auth {
+    .auth-card {
+      width: 100%;
+      padding: $default-value * 3.5;
+
+      .auth-card__remember {
+        display: block;
+
+        .remember__right {
+          text-align: start;
+        }
+      }
+    }
+  }
+}
+
+@include media-min-width(24rem) {
+  .auth {
+    .auth-card {
+      .auth-link {
+        display: block;
+      }
+    }
+  }
+}

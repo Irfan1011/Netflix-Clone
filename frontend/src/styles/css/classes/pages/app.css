@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: black;
+  gap: 3rem;
+  overflow: hidden;
+}
+.landing .landing__movies,
+.landing .landing__reason,
+.landing .landing__qna,
+.landing .landing__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 0 8rem;
+  gap: 1rem;
+  position: relative;
+}
+.landing .landing__movies h2,
+.landing .landing__reason h2,
+.landing .landing__qna h2,
+.landing .landing__footer h2 {
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+}
+.landing .landing__hero {
+  background: url("../../../../assets/netflix_auth_bg.jpg") center/cover no-repeat border-box;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.landing .landing__hero::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+.landing .landing__hero .hero__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem 10rem;
+}
+.landing .landing__hero .hero__nav .nav__left img {
+  width: 10rem;
+}
+.landing .landing__hero .hero__nav .nav__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.landing .landing__hero .hero__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  text-align: center;
+}
+.landing .landing__hero .hero__main .main__header,
+.landing .landing__hero .hero__main .main__input {
+  max-width: 40%;
+}
+.landing .landing__hero .hero__main .main__header h1 {
+  font-size: 3rem;
+}
+.landing .landing__hero .hero__main .main__header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.landing .landing__hero .hero__nav,
+.landing .landing__hero .hero__main {
+  position: relative;
+  z-index: 1;
+}
+.landing .reason__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.landing .landing__qna {
+  gap: 0.5rem;
+}
+.landing .landing__footer .footer__input {
+  width: 65%;
+}
+.landing .landing__footer .footer {
+  display: grid;
+  align-items: start;
+  gap: 2.5rem;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #888c8d;
+  padding-bottom: 9rem;
+}
+.landing .landing__footer .footer .footer__lists {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(5rem, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.landing .landing__footer .footer .footer__list,
+.landing .landing__footer .footer .footer__contact > .contact,
+.landing .landing__footer .footer .footer__cr > .cr {
+  list-style: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.landing .landing__footer .footer .footer__brand--text {
+  color: rgba(255, 255, 255, 0.8);
+}
+.landing .landing__footer .footer .footer__cr {
+  font-size: 0.8rem;
+}
+.landing .landing__footer .footer .footer__cr .cr {
+  color: #0000ff;
+}
+.landing .landing__footer .footer p {
+  margin: 0;
+}
+
+@media (max-width: 62rem) {
+  .landing .landing__movies,
+  .landing .landing__reason,
+  .landing .landing__qna,
+  .landing .landing__footer {
+    padding: 0 2rem;
+  }
+  .landing .landing__hero .hero__main {
+    padding: 0 2rem;
+  }
+  .landing .landing__hero .hero__main .main__header,
+  .landing .landing__hero .hero__main .main__input {
+    max-width: 100%;
+  }
+  .landing .landing__hero .hero__main .main__header h1 {
+    font-size: 1.8rem;
+  }
+  .landing .landing__hero .hero__main .main__header h2 {
+    font-size: 1rem;
+  }
+  .landing .landing__hero .hero__nav {
+    padding: 2rem 1.5rem;
+    justify-content: space-around;
+  }
+  .landing .landing__hero .hero__nav .nav__left img {
+    max-width: 5rem;
+  }
+  .landing .landing__footer {
+    padding: 0 2rem;
+  }
+  .landing .landing__footer .footer .footer__lists {
+    grid-template-columns: auto;
+  }
+  .landing .landing__footer .footer__input {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

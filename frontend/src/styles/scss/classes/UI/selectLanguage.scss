@@ -1,0 +1,56 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.language-dropdown {
+  display: flex;
+  align-items: center;
+  border: solid 1px map.get($color, "light");
+  border-radius: 5px;
+  width: fit-content;
+  position: relative;
+
+  select {
+    background: none;
+    padding: $default-value * 0.4 $default-value * 2;
+    font-weight: 530;
+    color: map.get($color, "white");
+    border: none;
+    appearance: none;
+
+    option,
+    option:hover {
+      color: map.get($color, "black");
+    }
+
+    &:focus-visible {
+      outline: 4px double map.get($color, "white");
+      border-radius: 5px;
+    }
+  }
+
+  .language-icon,
+  .arrow-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .language-icon {
+    left: 5%;
+  }
+
+  .arrow-icon {
+    right: 5%;
+  }
+}
+
+@include media-min-width(40rem) {
+  .language-dropdown {
+    width: 30%;
+
+    select {
+      width: 100%;
+      padding: $default-value * 0.5 $default-value;
+    }
+  }
+}

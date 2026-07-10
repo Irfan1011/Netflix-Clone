@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.default-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  width: max-content;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.default-btn:hover, .default-btn:active {
+  background: #888c8d;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.main-btn {
+  background: #e50914;
+  width: 100%;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+.main-btn:hover {
+  background: #c11119;
+}
+
+.btn--auth {
+  font-size: 1rem;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+}
+
+.btn--link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-weight: lighter;
+  text-decoration: underline;
+  color: #0000ff;
+}
+.btn--link:hover {
+  background: none;
+  border: none;
+}
+
+.btn--round {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.btn--round:hover {
+  background: #888c8d;
+}
+
+.btn--dropdown {
+  display: none;
+  width: max-content;
+  margin: 0;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: inherit;
+  background: #373030;
+  position: absolute;
+  top: 100%;
+  right: -100%;
+}
+
+.btn__page-left,
+.btn__page-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  height: 7rem;
+  background: #16161a;
+  color: #ffffff;
+  border: none;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+}
+.btn__page-left:hover,
+.btn__page-right:hover {
+  background: #373030;
+  cursor: pointer;
+}
+
+.btn__page-left {
+  left: 8.5%;
+}
+
+.btn__page-right {
+  right: 8.5%;
+}
+
+.btn--show {
+  display: block;
+}
+
+.btn--hide {
+  display: none;
+}
+
+@media (max-width: 62rem) {
+  .btn__page-left,
+  .btn__page-right {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=btn.css.map */

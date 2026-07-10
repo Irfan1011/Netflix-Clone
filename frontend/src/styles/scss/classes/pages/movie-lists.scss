@@ -1,0 +1,74 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.movies {
+  @include flexRow();
+  justify-content: start;
+  gap: $default-value * 3.3;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .movie {
+    @include flexColumn();
+    width: 100%;
+    padding: $default-value 0;
+
+    .movie__card {
+      width: $default-value * 12;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+
+      p {
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        left: -12%;
+        font-size: $default-value * 5;
+        font-weight: bold;
+        color: map.get($color, "black");
+        -webkit-text-stroke: 1px map.get($color, "white");
+      }
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  &.move--right .movie {
+    transform: translateX($default-value * -73);
+  }
+
+  &.move--left .movie {
+    transform: translateX(0);
+  }
+
+  &.move--right .movie,
+  &.move--left .movie {
+    transition: 0.5s ease;
+  }
+}
+
+@include media-min-width(40rem) {
+  .movies {
+    gap: $default-value * 2;
+    padding: 0 $default-value * 1.5;
+
+    .movie > .movie__card {
+      width: $default-value * 10;
+    }
+  }
+}

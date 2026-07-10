@@ -1,0 +1,37 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.qna {
+  width: 100%;
+
+  button,
+  & > p {
+    width: 100%;
+    padding: $default-value * 0.2 $default-value * 2;
+    border: none;
+    justify-content: space-between;
+    font-weight: normal;
+    font-size: $default-value * 1.5;
+    color: map.get($color, "light");
+    background: map.get($color, "gray");
+
+    &:hover {
+      background: map.get($color, "shadow");
+    }
+
+    .rotate-icon {
+      @include rotate45deg();
+    }
+  }
+
+  & > p {
+    @include slide-down();
+    transform-origin: 50% 0;
+    margin: $default-value * 0.1 0;
+    padding: $default-value * 2;
+
+    &:hover {
+      background: map.get($color, "gray");
+    }
+  }
+}

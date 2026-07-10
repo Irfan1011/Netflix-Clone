@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.home {
+  width: 100%;
+  overflow-x: hidden;
+}
+.home .hero {
+  width: inherit;
+  height: 100vh;
+  position: relative;
+}
+.home .hero .hero__banner {
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8) 5%, transparent), url("../../../../assets/hero-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 30%;
+  width: 100%;
+  height: 100%;
+}
+.home .hero .hero__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  width: 100vw;
+  height: fit-content;
+  position: absolute;
+  bottom: 0;
+}
+.home .hero .hero__details .hero__detail {
+  position: relative;
+  left: 5%;
+}
+.home .hero .hero__details .hero__detail .hero__title {
+  background-image: url("../../../../assets/hero-banner-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 25rem;
+  height: 11rem;
+}
+.home .hero .hero__details .hero__detail .hero__caption {
+  max-width: 40rem;
+  text-align: justify;
+}
+.home .hero .hero__details .hero__detail .hero__btns {
+  display: flex;
+  justify-content: space-between;
+  width: 14rem;
+}
+
+@media (max-width: 48rem) {
+  .home .hero .hero__details .hero__detail .hero__title {
+    width: 20rem;
+    height: 8rem;
+  }
+  .home .hero .hero__details .hero__detail .hero__detail {
+    left: 10%;
+  }
+}
+@media (max-width: 40rem) {
+  .home .hero {
+    height: 75vh;
+  }
+  .home .hero .hero__banner {
+    background-position: 50% 30%;
+  }
+  .home .hero .hero__details {
+    bottom: 10%;
+  }
+  .home .hero .hero__details .hero__detail .hero__title {
+    width: 20rem;
+    height: 7rem;
+  }
+  .home .hero .hero__details .hero__detail .hero__caption {
+    max-width: 18rem;
+  }
+  .home .hero .hero__details .items-wrapper {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

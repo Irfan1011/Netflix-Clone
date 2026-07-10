@@ -1,0 +1,64 @@
+@use "../../abstracts/index" as *;
+@use "sass:map";
+
+.main__input {
+  .email__form,
+  .form-control {
+    @include flexRow();
+    flex-wrap: wrap;
+    gap: $default-value * 0.5;
+    border: none;
+    position: relative;
+  }
+
+  .form-control {
+    flex-grow: 1;
+
+    label {
+      position: absolute;
+      left: 17px;
+      font-size: $default-value * 0.9;
+      color: map.get($color, "stone");
+      transition: 0.5s ease;
+      cursor: text;
+    }
+
+    input {
+      width: 100%;
+      background: rgba(map.get($color, "black"), 0.5);
+      backdrop-filter: blur(0.5px);
+      padding: $default-value;
+      padding-top: $default-value * 1.5;
+      border: 1px solid map.get($color, "stone");
+      border-radius: 5px;
+      color: map.get($color, "white");
+
+      &:focus-visible {
+        outline: 4px double map.get($color, "white");
+        border-radius: 5px;
+      }
+
+      &:focus-visible ~ label,
+      &:not(:placeholder-shown) ~ label {
+        font-size: $default-value * 0.7;
+        transform: translateY(-65%);
+      }
+    }
+  }
+
+  button {
+    padding: $default-value * 0.8 $default-value * 2;
+    width: auto;
+    font-size: $default-value * 1.5;
+  }
+}
+
+@include media-min-width(40rem) {
+  .main__input {
+    .form-control {
+      label {
+        left: 15px;
+      }
+    }
+  }
+}

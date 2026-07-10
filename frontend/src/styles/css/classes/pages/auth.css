@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate45deg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.auth .auth-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 80%;
+  align-items: start;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 4rem;
+  border-radius: 3px;
+  z-index: 1;
+}
+.auth .auth-card .title {
+  margin: 0;
+}
+.auth .auth-card .auth-card__remember {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(1, auto);
+  column-gap: 1rem;
+  margin: 1rem 0;
+}
+.auth .auth-card .auth-card__remember .remember__left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  grid-column: 1/2;
+  text-align: start;
+}
+.auth .auth-card .auth-card__remember .remember__right {
+  grid-column: 2/3;
+  text-align: end;
+}
+.auth .auth-card .auth-card__remember .remember__right a {
+  color: #0000ff;
+}
+.auth .auth-card .auth-card__remember .remember__right a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+.auth .auth-card .auth-card__remember input[type=checkbox] {
+  transform: scale(1.7);
+  accent-color: #ffffff;
+}
+.auth .auth-card .auth-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+@media (max-width: 40rem) {
+  .auth .auth-card {
+    width: 100%;
+    padding: 3.5rem;
+  }
+  .auth .auth-card .auth-card__remember {
+    display: block;
+  }
+  .auth .auth-card .auth-card__remember .remember__right {
+    text-align: start;
+  }
+}
+@media (max-width: 24rem) {
+  .auth .auth-card .auth-link {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=auth.css.map */
