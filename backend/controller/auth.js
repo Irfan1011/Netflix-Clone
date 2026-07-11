@@ -40,7 +40,11 @@ exports.postLogin = async (req, res, next) => {
     });
 
     res
-      .cookie("token", token, { httpOnly: true, secure: true })
+      .cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+      })
       .status(200)
       .json({ message: "Login Success", data: { ...user } });
   } catch (err) {
@@ -53,6 +57,7 @@ exports.postLogout = (req, res, next) => {
     .clearCookie("token", {
       httpOnly: true,
       secure: true,
+      sameSite: "none",
     })
     .status(200)
     .json({ message: "Logged Out" });
