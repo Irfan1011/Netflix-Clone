@@ -69,7 +69,7 @@ const Home = () => {
 export default Home;
 
 export const isAuthLoader = async () => {
-  const response = await fetch("http://localhost:3000/isAuth", {
+  const response = await fetch(`${import.meta.env.VITE_API_KEY}/isAuth`, {
     credentials: "include",
   });
 

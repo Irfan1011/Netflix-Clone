@@ -78,13 +78,16 @@ export const getFetchGenre = () => {
 };
 
 export const postRegister = async (dataObj) => {
-  const response = await fetch("http://localhost:3000/auth/register", {
-    method: "POST",
-    body: JSON.stringify(dataObj),
-    headers: {
-      "Content-Type": "application/json",
+  const response = await fetch(
+    `${import.meta.env.VITE_API_URL}/auth/register`,
+    {
+      method: "POST",
+      body: JSON.stringify(dataObj),
+      headers: {
+        "Content-Type": "application/json",
+      },
     },
-  });
+  );
 
   const resData = await response.json();
 
@@ -96,7 +99,7 @@ export const postRegister = async (dataObj) => {
 };
 
 export const postLogin = async (dataObj) => {
-  const response = await fetch("http://localhost:3000/auth/login", {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
     method: "POST",
     body: JSON.stringify(dataObj),
     headers: {
@@ -115,7 +118,7 @@ export const postLogin = async (dataObj) => {
 };
 
 export const postLogout = async () => {
-  const response = await fetch("http://localhost:3000/auth/logout", {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/logout`, {
     method: "POST",
     credentials: "include",
   });
