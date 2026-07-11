@@ -14,7 +14,10 @@ app.use(cookieParser());
 
 //CORS Error fixed
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173"); //Which origin could use this server. This could also spesific example: 'Access-Control-Allow-Origin', 'codepen.io'
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://dazzling-shortbread-693507.netlify.app",
+  ); //Which origin could use this server. This could also spesific example: 'Access-Control-Allow-Origin', 'codepen.io'
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE",
