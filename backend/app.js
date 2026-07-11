@@ -38,5 +38,5 @@ app.use((error, req, res, next) => {
 });
 
 mongoConnect((client) => {
-  app.listen(process.env.PORT);
+  app.listen(process.env.PORT || 3000);
 });
